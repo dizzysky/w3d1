@@ -104,3 +104,7 @@ class Array
     result
   end
 end
+
+def subwords(word, dictionary)
+  substrings(word).select { |substr| dictionary.include?(substr) }
+end
