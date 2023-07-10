@@ -1,3 +1,4 @@
+
 class Array
 
     def my_each(&block)
@@ -65,6 +66,19 @@ class Array
             return false 
         end
     end
+
+    def my_flatten
+        result = []
+        self.each do |el|
+          if el.is_a?(Array)
+            result += el.my_flatten
+          else
+            result << el
+            result
+          end
+        end
+        result
+      end
 
 
     
